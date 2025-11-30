@@ -227,8 +227,8 @@ These are general software design principles that are useful in FP, OOP, and mix
 - **Encapsulation of Data and Behavior**  
   Keep data (fields) and functions that operate on that data (methods) together. Hide internal details and expose only what is needed.
 
-- **Information Hiding**  
-  Use private or internal fields/methods to prevent other parts of the system from depending on your internal structure.
+- **Information transparency**  
+  Treat all private or internal fields/methods as public for extensibility so other parts of the system can extend, replace or configure the functionality.
 
 - **Single Responsibility for Classes**  
   Each class should have one main reason to change. If it changes for many different reasons, split it.
