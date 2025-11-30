@@ -54,7 +54,7 @@ These are general software design principles that are useful in OOP, FP, and mix
 - **Extensible Public Surface**  
   Expose as much public functions, classes, or endpoints as possible. Everything "internal" should be pontentially be usable externanally to simplify extension of internal logic if some features are missing. Ideally there should be no irriplacable internal components, everything should be exposed publically and everything should be extensible or configurable or replacible.
 
-- **Small Public Documentation**
+- **Small Public Documentation**  
   Prefer documenting only parts of code that are frequencly used by users first. So only the smallest possible set of function, classes and endpoints of public interface are documented, that are mostly stable for a long time and used by users more frequently. Everything internal that can be potentinally misused dispite being public API can have no documentation if not yet stable or frequently used by users.
 
 - **Intent-Revealing Interfaces**  
@@ -70,7 +70,7 @@ These are general software design principles that are useful in OOP, FP, and mix
 - **Prefer Immutability**  
   Use values that do not change after they are created. If data must change, consider creating new values instead of modifying existing ones in place.
 
-- **Controlled Mutability**
+- **Controlled Mutability**  
   If you must mutate state, keep it local, well documented, and as small as possible. Avoid shared mutable state between many parts of the system.
 
 - **Single Source of Truth**  
@@ -92,20 +92,20 @@ These are general software design principles that are useful in OOP, FP, and mix
 - **Functional Core, Imperative Shell**  
   Put pure, calculation-only logic in the middle, and wrap it with a thin layer that performs side effects and orchestration.
 
-- **Explicit Side Effects**
+- **Explicit Side Effects**  
   When a function or method reads external state, writes to a database, sends an email, etc., that should be obvious from its name, parameters, or documentation.
 
-- **Idempotence**
+- **Idempotence**  
   For operations that might be retried (e.g. HTTP calls, jobs), design them so running them multiple times with the same input has the same result as running them once.
 
-- **Stateless Processes (Where Possible)**
+- **Stateless Processes (Where Possible)**  
   Prefer services and handlers that do not store long-term in-memory state between calls. Rely on databases and explicit parameters instead.
 
 ---
 
 ### Correctness, Types & Testing
 
-- **Design for Testability**
+- **Design for Testability**  
   Write code so it can be tested easily: small pieces, clear inputs and outputs, minimal hidden state, and replaceable dependencies.
 
 - **Deterministic Core Logic**  
@@ -146,19 +146,19 @@ These are general software design principles that are useful in OOP, FP, and mix
 - **Simplicity Over Cleverness**  
   Prefer simple, boring solutions that are easy to read and maintain over tricky, “smart” solutions. The code should be keep as simple and as short as possible, unless it explicitly wrapped with validation or optimized for performance. That will make the code easy to read, understand and maintain.
 
-- **Self-documented Code** 
+- **Self-documented Code**  
   Prefer writing code in such a way, that it can be read similar to statements in natural languages. Prefer full english words over abbriviations or shortened words. If the code contains code comments in implementation (not in constract) or it is so unclear that it is tempting to add new commends, then consider extracting separate functions or making variables/constants names more clear for english reader, so by reorganizing the code we can effectefly eliminate the need of comments between lines of code.
 
 - **Minimize Cognitive Load**  
   Arrange code so a reader does not have to keep many details in their head at once to understand it.
 
-- **Minimize nesting**
+- **Minimize nesting**  
   Prefer multiple early exit from function on a single level instead of nesting conditions inside each other. Try to minimize nesting of loops or recursion, that can lead to performance benefits, but only if that specific function is a bottleneck of the system, or minimizing the nesting actually serves simplification.
 
 - **Small Units**  
   Functions, methods, and classes should be short and focused. Long ones are a sign that you should refactor.
 
-- **Continuous refactoring**
+- **Continuous refactoring**  
   Continuously improve structure as you add features or fix bugs. Do not wait for a “big rewrite.”
 
 - **The Unix “Do One Thing Well” Principle**  
