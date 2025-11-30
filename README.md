@@ -4,7 +4,7 @@ Architecture principles for code design
 
 ## 🌍 Universal Principles (apply to any language or paradigm)
 
-These are general software design principles that are useful in OOP, FP, and mixed styles.
+These are general software design principles that are useful in FP, OOP, and mixed styles.
 
 ### Structure & Modularity
 
@@ -31,8 +31,6 @@ These are general software design principles that are useful in OOP, FP, and mix
 
 - **Clean Architecture Dependency Rule**  
   Code that represents business rules should not depend on code that deals with frameworks, databases, UI, or external systems. The important logic is at the center; everything else points inward.
-
----
 
 ### Behavior, Interfaces & Abstraction
 
@@ -63,8 +61,6 @@ These are general software design principles that are useful in OOP, FP, and mix
 - **Protected Variations**  
   Put a clear boundary around things that might change (e.g., frameworks, external APIs, storage). Depend on abstractions instead of directly on volatile details.
 
----
-
 ### State & Data
 
 - **Prefer Immutability**  
@@ -81,8 +77,6 @@ These are general software design principles that are useful in OOP, FP, and mix
 
 - **Make Invalid States Impossible**  
   Design your data structures so that impossible or illegal combinations of values cannot be represented at all.
-
----
 
 ### Side Effects, I/O & Boundaries
 
@@ -101,8 +95,6 @@ These are general software design principles that are useful in OOP, FP, and mix
 - **Stateless Processes (Where Possible)**  
   Prefer services and handlers that do not store long-term in-memory state between calls. Rely on databases and explicit parameters instead.
 
----
-
 ### Correctness, Types & Testing
 
 - **Design for Testability**  
@@ -120,8 +112,6 @@ These are general software design principles that are useful in OOP, FP, and mix
 - **Validation at Boundaries**  
   Validate input when it enters the system (e.g., HTTP request, queue message) so inner code can assume it is well-formed. So validation can done in a single place, all internal code should assume validation was already done, and can be simplified to not double check everything.
 
----
-
 ### Domain & Understanding
 
 - **Ubiquitous Language**  
@@ -138,8 +128,6 @@ These are general software design principles that are useful in OOP, FP, and mix
 
 - **Aggregates / Consistency Boundaries**  
   Define clear clusters of data that must stay consistent together and update them through controlled operations.
-
----
 
 ### Simplicity, Clarity & Maintenance
 
@@ -167,8 +155,6 @@ These are general software design principles that are useful in OOP, FP, and mix
 - **Programs Should Work Together**  
   Design modules and services so they can be easily combined, piped, or composed with others.
 
----
-
 ### APIs, Services & Deployment
 
 - **Consistent API Design**  
@@ -189,11 +175,7 @@ These are general software design principles that are useful in OOP, FP, and mix
 - **Environment Parity**  
   Keep development, staging, and production environments as similar as practical to reduce “works on my machine” issues.
 
----
-
 ## 🧬 Functional Programming Principles
-
-These assume you are using a functional style (in a pure FP language or a hybrid one).
 
 - **Pure Functions by Default**  
   Write functions that do not depend on or change external state. Given the same input, they always return the same output.
@@ -240,11 +222,7 @@ These assume you are using a functional style (in a pure FP language or a hybrid
 - **Lazy Evaluation (Where Available and Appropriate)**  
   When the language supports it, use laziness to build infinite sequences or expensive computations that are only evaluated when needed, but keep track of potential performance traps.
 
----
-
 ## 🧩 Object-Oriented Programming Principles
-
-These assume you are using classes, objects, and methods as primary building blocks.
 
 - **Encapsulation of Data and Behavior**  
   Keep data (fields) and functions that operate on that data (methods) together. Hide internal details and expose only what is needed.
