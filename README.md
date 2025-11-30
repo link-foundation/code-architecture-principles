@@ -146,7 +146,7 @@ These are general software design principles that are useful in OOP, FP, and mix
 - **Simplicity Over Cleverness**  
   Prefer simple, boring solutions that are easy to read and maintain over tricky, “smart” solutions. The code should be keep as simple and as short as possible, unless it explicitly wrapped with validation or optimized for performance. That will make the code easy to read, understand and maintain.
 
-- **Self-documented Code**
+- **Self-documented Code** 
   Prefer writing code in such a way, that it can be read similar to statements in natural languages. Prefer full english words over abbriviations or shortened words. If the code contains code comments in implementation (not in constract) or it is so unclear that it is tempting to add new commends, then consider extracting separate functions or making variables/constants names more clear for english reader, so by reorganizing the code we can effectefly eliminate the need of comments between lines of code.
 
 - **Minimize Cognitive Load**  
